@@ -1,42 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { GetStorage } from '../helpers/GetStorage';
 
 export const ListOfMovies = () => {
+
+    const [moviesState, setMoviesState] = useState([])
+
+    useEffect(() => {
+        let movies = GetStorage()
+        setMoviesState(movies? movies : [])
+    }, [])
     return (
         <section id="content" className="content">
-            {/* 
-            <!--aqui van las peliculas--> */}
-            <article className="peli-item">
-                <h3 className="title">Desarrollo web</h3>
-                <p className="description">victorroblesweb.es</p>
+            {moviesState.map(movie => {
+                return (
+                    <article key={movie.id} className="peli-item">
+                        <h3 className="title">{movie.title}</h3>
+                        <p className="description">{movie.description}</p>
 
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
-
-            <article className="peli-item">
-                <h3 className="title">Desarrollo web</h3>
-                <p className="description">victorroblesweb.es</p>
-
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
-
-            <article className="peli-item">
-                <h3 className="title">Desarrollo web</h3>
-                <p className="description">victorroblesweb.es</p>
-
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
-
-            <article className="peli-item">
-                <h3 className="title">Desarrollo web</h3>
-                <p className="description">victorroblesweb.es</p>
-
-                <button className="edit">Editar</button>
-                <button className="delete">Borrar</button>
-            </article>
-
+                        <button className="edit">Editar</button>
+                        <button className="delete">Borrar</button>
+                    </article>
+                )
+            })}
         </section>
     )
 }
