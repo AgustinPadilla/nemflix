@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { GetStorage } from '../helpers/GetStorage';
 
-export const ListOfMovies = () => {
+export const ListOfMovies = ({moviesState, setMoviesState}) => {
 
-    const [moviesState, setMoviesState] = useState([])
+    
 
     useEffect(() => {
         let movies = GetStorage()

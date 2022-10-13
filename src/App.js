@@ -1,8 +1,11 @@
 import { ListOfMovies } from './components/ListOfMovies';
 import { Search } from './components/Search';
 import { Add } from './components/Add';
+import { useState } from 'react';
 
 function App() {
+    const [moviesState, setMoviesState] = useState([])
+
     return (
         <div className="layout">
             {/* <!--Cabecera--> */}
@@ -25,13 +28,13 @@ function App() {
             </nav>
 
             {/* <!--Contenido principal--> */}
-            <ListOfMovies></ListOfMovies>
+            <ListOfMovies moviesState= {moviesState} setMoviesState= {setMoviesState}></ListOfMovies>
 
             {/* <!--Barra lateral--> */}
             <aside className="lateral">
                 <Search></Search>
 
-                <Add></Add>
+                <Add setMoviesState= {setMoviesState}></Add>
             </aside>
 
             {/* <!--Pie de página--> */}
