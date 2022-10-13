@@ -32,7 +32,7 @@ function App() {
 
             {/* <!--Barra lateral--> */}
             <aside className="lateral">
-                <Search></Search>
+                <Search moviesState= {moviesState} setMoviesState= {setMoviesState}></Search>
 
                 <Add setMoviesState= {setMoviesState}></Add>
             </aside>

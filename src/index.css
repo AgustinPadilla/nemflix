@@ -81,8 +81,8 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   margin-top: 10px;
-  padding: 30px;
-  margin-right: 20px;
+  padding: 20px;
+  margin-right: 10px;
 }
 
 .peli-item {
@@ -136,7 +136,14 @@ input[type=button]:hover {
   padding: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
-  width: 70%;
+  width: 100%;
+}
+
+.lateral h5 {
+  color: rgb(201, 0, 0);
+  background-color: rgb(255, 73, 73);
+  border: 3px solid rgb(201, 0, 0);
+  border-radius: 10px;
 }
 
 .lateral input[type=text],
